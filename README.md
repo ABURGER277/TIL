@@ -7,8 +7,11 @@
 ## Topics to Study Later
 추후 공부할 내용을 키워드로 정리
 - JS: arrayMethod
+- JS: asynchronous
+- JS: callback
 - JS: promise
 - JS: async & await
+- JS: execute Engine
 - JS: prototype
 - JS: 타입 배열(Typed Array)
 - JS: 비트 연산자
