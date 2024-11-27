@@ -96,7 +96,7 @@ console.log(Array.isArray(new Int16Array([15, 33]))); // false
 Array형식(format)을 가지고 있지만 Array객체인지 확인이 필요할 때 사용한다.
 
 ### Array.from()
-이 함수는 순회 가능`literable` 또는 유사 배열 객체(Typed Array)에서 얕게 복사된 새로운 Array 인스턴스를 생성한다.
+이 함수는 순회 가능`Iterable` 또는 유사 배열 객체(Typed Array)에서 얕게 복사된 새로운 Array 인스턴스를 생성한다.
 ```js
 console.log(Array.from("Goodbye ~")); // ['G', 'o', 'o', 'd', 'b', 'y','e', ' ', '~']
 console.log(Array.from([1, 2, 3], (val) => val + val)); // [2, 4, 6]
@@ -228,3 +228,43 @@ copyWithin(target, start, end)
 => `[5, 6, 7, 5, 6, 7, 8, 9, 10, 10]`
 
 **특정한 데이터 이동, 회전 또는 배열 내부 재구성이 필요한 특수한 요구가 있을 때 효율적이다.**
+
+### Array.prototype.entries()
+**`[a, b, c] => [{0: a}, {1: b}, {2: c}]`**
+`Array.entries()`메서드는 배열의 각 인덱스에 대하여 {키: 값} 쌍으로 이루어진 `Iterator객체`를 반환한다(**Array가 아니다.**).
+```js
+const testArr = ['A', 'B', 'C'];
+const entriedArr = testArr.entries();
+
+console.log(entriedArr); // Object [Array Iterator] {}
+console.log(Array.isArray(entriedArr)); // false
+
+for(const [index, value] of entriedArr) {
+  console.log(index, ':', value);
+}
+// 0 : A
+// 1 : B
+// 2 : C
+```
+
+### Array.prototype.every()
+**`[1, 2, 3] => true || false`**
+`Array.every()`메서드는 배열의 모든 요소가 제공된 함수로 구현된 테스트를 통과하는지 테스트 한다.
+**빈 배열은 true를 반환한다.**
+
+이 함수는 `.every(callbackFn)` or `.every(callbackFn, thisArgs)`형태로 이루어진다.
+배열의 각 요소들에 대해 `callbackFn`을 한번씩 호출하고 `false`가 나올 때 까지 호출을 반복한다.
+`거짓`요소가 발견되면 `false`를 반환하고 배열 순회를 중지한다.
+```js
+const result1 = numberArr.every((data) => Number.isInteger(data));
+console.log(result1); // true
+const result2 = numberArr.every((data) => data > 5);
+console.log(reuslt2) // false
+```
+
+**every()의 용도는 boolean을 반환 시키는 용도이다.**
+배열의 모든 부분을 순환한다고 배열의 내용을 변경시키는 것은 불가능하다..
+```js
+numberArr.every((data) => data = 10);
+console.log(numberArr); // [1, 2, 3, 4,  5, 6, 7, 8, 9, 10]
+```
