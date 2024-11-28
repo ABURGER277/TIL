@@ -85,10 +85,8 @@ function bubbleSort(a[], n)
 - n개의 메모리 사용
 - 공간 복잡도: $o(n)$
 - 비교 횟수:
-$
-\sum_{i=0}^{n-1}{i}=
-\frac{n(n-1)}{2}
-$
+$\sum_{i=0}^{n-1}{i}=
+\frac{n(n-1)}{2}$
 - 시간 복잡도: $o(n^2)$
 
 ### 삽입 정렬
@@ -118,10 +116,7 @@ function insertSort(a[], n)
   - 이미 정렬되어 있는 경우: $n-1$
   - 역으로 정렬되어 있는 경우: $\frac{n(n-1)}{2}$
 - 평균 시간 복잡도:
-$
-\sum_{i=1}^{n-1}{\frac{i}{2}}=
-\frac{n(n-1)}{4}
-$
+$\sum_{i=1}^{n-1}{\frac{i}{2}}=\frac{n(n-1)}{4}$
 
 ### 셸 정렬
 `Shell Sort`: 창안자의 이름에서 유래
@@ -159,7 +154,4 @@ function intervalSort(a[], begin, end, interval)
   - 이미 정렬되어 있는 경우: $n-1$
   - 역으로 정렬되어 있는 경우: $\frac{n(n-1)}{2}$
 - 평균 시간 복잡도:
-$
-\sum_{i=1}^{n-1}{\frac{i}{2}}=
-\frac{n(n-1)}{4}
-$
+$\sum_{i=1}^{n-1}{\frac{i}{2}}=\frac{n(n-1)}{4}$
