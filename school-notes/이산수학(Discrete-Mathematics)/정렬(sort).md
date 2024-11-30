@@ -169,3 +169,21 @@ $\sum_{i=1}^{n-1}{\frac{i}{2}}=\frac{n(n-1)}{4}$
 6. 위 과정을 `반복`수행
 - 시간 복잡도: $o(nlogn)$ 
   - $o(n^2)보다 작다.$
+
+#### 코드 로직
+```js
+function quickSort(a[], left, right)
+  l = left;
+  r = right;
+  pivot = (l + r) / 2;
+
+  while(l < r)
+    while(a[l] < a[pivot]) l++;
+    while(a[r] > a[pivot]) r--;
+    if(r < l) r = l;
+    if(l < r) swap(a[l], a[r]);
+
+  swap(a[pivot], a[r]);
+  if(left < r) quickSort(a[], left, r-1);
+  if(right > l) quickSort(a[], l+1, right);
+```
