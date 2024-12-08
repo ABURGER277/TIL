@@ -17,6 +17,6 @@
 - JS: 비트 연산자
 - DesignPattern
 
-[ ] checkBox Test
-[x] checkBox Test2
-[ ] checkBox Test3
+- [ ] checkBox Test
+- [x] checkBox Test2
+- [ ] checkBox Test3
