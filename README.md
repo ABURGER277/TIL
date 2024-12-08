@@ -16,3 +16,7 @@
 - JS: 타입 배열(Typed Array)
 - JS: 비트 연산자
 - DesignPattern
+
+[ ] checkBox Test
+[x] checkBox Test2
+[ ] checkBox Test3
