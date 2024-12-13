@@ -1,6 +1,6 @@
 # TIL
 > desc: Daily records of learning
-> `제가 틀린부분`, `발견하신 오타`, `기타 질문사항`은 ISSUE에 작성 부탁드립니다.
+>> `제가 틀린부분`, `발견하신 오타`, `기타 질문사항`은 ISSUE에 작성 부탁드립니다.
 ---
 ## Directory Description
 - school-notes: `학점은행제`에서 학습한 `전공지식` 내용을 정리해 놓은 저장소입니다.
