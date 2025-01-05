@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CORS Request Example</title>
+</head>
+<body>
+  <h1>CORS Request Example</h1>
+  <button id="sendRequest">Send CORS Request</button>
+  <p id="responseMessage"></p>
+
+  <script>
+    document.getElementById("sendRequest").addEventListener("click", async () => {
+      const apiUrl = "http://localhost:4000/api/data"; // 서버 URL
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST", // 요청 메서드
+          headers: {
+            "Content-Type": "application/json", // 요청 헤더
+          },
+          body: JSON.stringify({ message: "Hello, Server!" }), // 요청 본문
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Response from server:", data);
+
+        // 응답 메시지를 화면에 표시
+        document.getElementById("responseMessage").textContent = `Server Response: ${data.message}`;
+      } catch (error) {
+        console.error("CORS request failed:", error);
+        document.getElementById("responseMessage").textContent = "CORS request failed.";
+      }
+    });
+  </script>
+</body>
+</html>
