@@ -70,7 +70,7 @@
   - execute Engine
   - eventLoop
   - prototype
-  - ~ES6~ syntax~
+  - ~ES6Syntax~
   - 타입 배열(Typed Array)
   - package Manager
     - npm 
