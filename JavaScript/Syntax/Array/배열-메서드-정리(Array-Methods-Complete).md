@@ -1,6 +1,16 @@
 # 배열 인스턴스 메서드 정리
 > static Method는 제외하였습니다.
 > abc 순으로 작성
+
+## Method 요약본
+`[1,2,3] => [3]` [arr.at(-1)](#arrayprototypeat)
+`['a','b','c'] ['d','e','f'] => ['a','b','c','d','e','f']` [arr1.concat(arr2)](#arrayprototypeconcat)
+`[1,2,3,4,5] => [1,2,3,3,4]` [arr.copyWithin(3,2)](#arrayprototypecopywithin)
+`['a','b','c'] => <iterator{}>{0:'a'},{1:'b'},{2:'c'}` [arr.entries()](#arrayprototypeentries)
+`[2, 4, 8] => true` [arr.every(num => num % 2 === 0)](#arrayprototypeevery)
+
+
+
 ...작성중입니다.
 ## Instance Methods
 ### Array.prototype.at()
@@ -86,8 +96,10 @@ copyWithin(target, start, end)
 **특정한 데이터 이동, 회전 또는 배열 내부 재구성이 필요한 특수한 요구가 있을 때 효율적이다.**
 
 ### Array.prototype.entries()
-**`[a, b, c] => [{0: a}, {1: b}, {2: c}]`**
+**`[a, b, c] => <iterator>{0: a}, {1: b}, {2: c}`**
 `Array.entries()`메서드는 배열의 각 인덱스에 대하여 {키: 값} 쌍으로 이루어진 `Iterator객체`를 반환한다(**Array가 아니다.**).
+
+아래와 같이 사용 가능하다.
 ```js
 const testArr = ['A', 'B', 'C'];
 const entriedArr = testArr.entries();
@@ -124,3 +136,52 @@ console.log(reuslt2) // false
 numberArr.every((data) => data = 10);
 console.log(numberArr); // [1, 2, 3, 4,  5, 6, 7, 8, 9, 10]
 ```
+
+### Array.prototype.fill()
+Index 범위를 지정해주고 해당 요소들을 바꾼다.
+`fill(value, start, end)`
+
+**`start`, `end`**에는 Index값인 정수를 넣어야 한다.
+범위는 **`end`의 직전**까지이다. `end`는 포함되지 않는다.
+이 둘은 `optional` 즉, 없어도 된다.
+ **`at()`처럼 동작한다.(음수도 넣을 수 있다.)**
+
+```js
+console.log([1,2,3,4,5].fill(9)); // [9,9,9,9,9]
+console.log([1,2,3,4,5].fill(9,1)); // [1,9,9,9,9]
+console.log([1,2,3,4,5].fill(9,1,3)); // [1,9,9,4,5]
+console.log([1,2,3,4,5].fill(9,-1)); // [1,2,3,4,9]
+console.log([1,2,3,4,5].fill(9,-3,-1)); // [1,2,3,9,9]
+```
+### Array.prototype.filter()
+### Array.prototype.find()
+### Array.prototype.findIndex()
+### Array.prototype.findLast()
+### Array.prototype.findLastIndex()
+### Array.prototype.flat()
+### Array.prototype.flatMap()
+### Array.prototype.forEach()
+### Array.prototype.includes()
+### Array.prototype.indexOf()
+### Array.prototype.join()
+### Array.prototype.keys()
+### Array.prototype.lastIndexOf()
+### Array.prototype.map()
+### Array.prototype.pop()
+### Array.prototype.push()
+### Array.prototype.reduce()
+### Array.prototype.reduceRight()
+### Array.prototype.reverse()
+### Array.prototype.shift()
+### Array.prototype.slice()
+### Array.prototype.some()
+### Array.prototype.sort()
+### Array.prototype.splice()
+### Array.prototype.toLocaleString()
+### Array.prototype.toReversed()
+### Array.prototype.toSorted()
+### Array.prototype.toSpliced()
+### Array.prototype.toString()
+### Array.prototype.unshift()
+### Array.prototype.values()
+### Array.prototype.with()
