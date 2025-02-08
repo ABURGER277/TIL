@@ -6,11 +6,12 @@
 ## Directory Description
 - school-notes: `학점은행제`에서 학습한 `전공지식` 내용을 정리해 놓은 저장소입니다.
 - Javascript: `JavaScript`에 대해 학습한 내용을 정리해 놓은 저장소입니다.
-- WebHistory: `웹의 역사`에 대해 학습한 내용을 정리해 놓은 저장소 입니다.
-- Algorithms: `알고리즘`에 대해 학습한 내용을 정리해 놓은 저장소 입니다.
-- React: `React`를 공부하며 작성한 코드들을 링크로 올려놓았습니다.
-- 디자인 패턴: `디자인패턴`에 대해 학습한 내용을 정리해 놓은 저장소 입니다.
-- 웹 보안: `웹 보안 기술`에 대해 학습한 내용을 정리해 놓은 저장소 입니다.
+- WebHistory: `웹의 역사`에 대해 학습한 내용을 정리해 놓은 저장소입니다.
+- Algorithms: `알고리즘`에 대해 학습한 내용을 정리해 놓은 저장소입니다.
+- React: `React`를 공부하며 작성한 코드들을 링크로 올려 놓았습니다.
+- 디자인 패턴: `디자인패턴`에 대해 학습한 내용을 정리해 놓은 저장소입니다.
+- 웹 보안: `웹 보안 기술`에 대해 학습한 내용을 정리해 놓은 저장소입니다.
+- 도서 기록: 읽은 책에서 배운 내용과 간단한 후기 작성해 놓은 저장소입니다.
 ---
 ## Topics to Study Later
 추후 공부할 내용을 키워드로 정리
@@ -40,13 +41,13 @@
     - FireBase
   - RDBMS
     - Oracle
-   
+
 - More about Database
   - N + 1
- 
+
 - DB scailing
   - DB indexes
- 
+
 - WebSecurity
   - HTTPS
   - ~CORS~
@@ -59,6 +60,15 @@
   - Forms
   - SEO
 
+- CSS:
+  - Layout
+  - SASS
+
+- Browser
+  - DOM
+  - BOM
+  - Event
+
 - JS:
   - DOM 조작
   - arrayMethod(작성 중)
@@ -70,30 +80,27 @@
   - execute Engine
   - eventLoop
   - prototype
-  - ~ES6Syntax~
+  - ~ES6Syntax(optionalChain, distruct, ...)~
+  - ~module(CommonJS, ESM)~
   - 타입 배열(Typed Array)
   - package Manager
-    - npm 
+    - npm
 
 - React & Next: 다른 Repo에 작성
 
 - TS:
   - Basics
- 
-- CSS:
-  - Layout
-  - SASS
- 
+
 - DesignPatterns:
   - MVC
   - MVVC
   - GoF DesignPatterns
     - 옵저버 패턴
     - 생성 패턴
-   
+
 - Build Tool
   - Vite
- 
+
 - Linter
   - ESLint
   - Prettier
@@ -105,10 +112,10 @@
 - CI/CD
   - Github Actions
   - Jenkins
- 
+
 - Container
   - Kubernate
   - Docker
- 
+
 - VCS
   - Git
