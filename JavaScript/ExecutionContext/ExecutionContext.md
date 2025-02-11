@@ -7,7 +7,7 @@
 2. 스캔이 완료되면 스크립트의 모든 코드를 변환하고 실행하는 과정을 관리하는 `실행 컨텍스트`라는 환경이 생성된다.
 3. 이 **환경`Execute Engeine`** 은 실행할 코드에 전달할 정보들을 담고있는 객체라고 볼 수 있다.
 
-JS의 코드 진행(`scope``hoisting``this``function``closure`) 동작 원리를 담고 있다.
+JS의 코드 진행(`scope` `hoisting` `this` `function` `closure`) 동작 원리를 담고 있다.
 모아진 EC(Excute Engine)를 콜스택에 적재하여 코드의 실행 순서와 환경을 보장한다.
 
 각각의 EC는 활성화되는 시점에 해당 컨텍스트 내부의 선언된 변수들을 위로 끌어 올리고(hoisting), 외부의 환경정보를 구성하고, this값을 설정하는 등의 동작을 수행한다.
@@ -59,23 +59,23 @@ console.log(window.globalVar); //100
 ### Variable Environment
 - `Variable Environment`는 현재 실행 컨텍스트 내의 변수와 함수, 그리고 외부 환경에 대한 정보를 포함한다.
   - 외부 환경이란 `environmentRecord`와 `outerEnvironmentReference`로 구성된다.
-  - **`environmentRecord`**는 실행 컨텍스트 내에서 선언된 변수와 함수 선언들의 실제 값을 저장한다.
-  - **`outerEnvironmentReference`**는 외부 환경에 대한 참조를 유지한다. 이 참조는 현재 컨텍스트가 위치한 코드의 외부 스코프, 즉 부모 스코프에 대한 정보를 가져온다.
+  - **`environmentRecord`** 는 실행 컨텍스트 내에서 선언된 변수와 함수 선언들의 실제 값을 저장한다.
+  - **`outerEnvironmentReference`** 는 외부 환경에 대한 참조를 유지한다. 이 참조는 현재 컨텍스트가 위치한 코드의 외부 스코프, 즉 부모 스코프에 대한 정보를 가져온다.
 - EC가 최초 생성될 때, `Varialbe Environment`에 이 변수들이 저장되고, 이후 `Lexical Environment`를 형성하기 위해 복사된다.
 - `Variable Environment`는 초기화 시점의 상태를 스냅샷으로 유지하며, 후에는 참조만 제공한다.
   - 실행 컨텍스트의 초기 상태를 추적하기에 용이하다.
 
 ### Lexical Environment
 - `Variable Environment`와 마찬가지로, `Lexical Environment`도 `environmentRecord`와 `outerEnvironmentReference`로 구성된다.
-  - **`environmentRecord`**는 실행 중에 코드내에서 발생하는 변화를 실시간으로 반영한다. 이는 블록내의 변수할당이나 함수 표현식과 같은 동적인 활동을 포함한다.
-  - **`outerEnvironmentReference`**는 `Lexical Environmnet`의 외부 스코프에 대한 참조를 제공한다. 이는 현재 컨텍스트가 어느 컨텍스트와 연결되어 있는지 나타낸다.
+  - **`environmentRecord`** 는 실행 중에 코드내에서 발생하는 변화를 실시간으로 반영한다. 이는 블록내의 변수할당이나 함수 표현식과 같은 동적인 활동을 포함한다.
+  - **`outerEnvironmentReference`** 는 `Lexical Environmnet`의 외부 스코프에 대한 참조를 제공한다. 이는 현재 컨텍스트가 어느 컨텍스트와 연결되어 있는지 나타낸다.
 - `Lexical Environment`는 코드 실행 중에 발생하는 동적인 활동을 반영함으로서 `Variable Environment`와 차별된다. 이를 통해 실행 컨텍스트의 실시간 상태를 보다 정확하게 반영하게 된다.
 
 #### Environment
 - environmentRecord
   - 함수 내의 코드가 실행되기 전에,현재 컨텍스트에 관련된 모든 식별자 정보들이 저장된다.
     - 식별자 정보: 매개변수의 이름, 함수 선언, 변수 명 등
-    - 이 과정을 통해 JS엔진은 코드 실행전에 해당 환경의 식별자들은 인지하게 된다.: `Hoisting`
+    - 이 과정을 통해 JS엔진은 코드 실행전에 해당 환경의 식별자들은 인지하게 된다: `Hoisting`
     - `Hoisting`은 코드에서 선언들을 먼저 처리하고 나중에 할당을 수행하는 Javascript의 동작을 추상화한 개념이다.
       - 함수 선언문은 전체가 hoisting되지만, 함수 표현식은 이름만 호이스팅되고, 함수 본문은 실행 흐름이 위치에 도달했을 때 처리된다.
 - outerEnvironmentReference
